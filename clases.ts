@@ -42,7 +42,7 @@ const autoArray : Auto[] = [
     new Auto("BMW", 2020, 600, 250)
 ];
 
-
+// itera cada objeto de tipo Auto y los muestra por consola
 for (let i=0; i < autoArray.length; i++) {
     autoArray[i].imprimirObjeto();
 };
@@ -50,6 +50,7 @@ for (let i=0; i < autoArray.length; i++) {
 
 const distancia: number = 120;
 
+// itera cada objeto de tipo Auto y calcula el tiempo que tarda el auto en recorrer x distancia de forma optima
 for (let i=0; i < autoArray.length; i++) {
     let tiempoRecorrido: number = autoArray[i].calcularTiempo(distancia)
     console.log(`El auto tarda ${tiempoRecorrido} horas en recorrer ${distancia} km de forma optima.`)

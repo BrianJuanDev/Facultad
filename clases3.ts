@@ -14,23 +14,30 @@ class CuentaBancaria {
     }
 
     asignarFondos(fondo: number): void{
-        if (fondo >= 500000)
-            console.warn('Alertaa! El monto es mayor a 500000');
+        if (fondo >= 500000) {
+            return console.warn('Alertaa! El monto es mayor a 500000');
+        }
 
         this.monto += fondo;
         return console.info('El fondo ha sido depositado efectivamente');
     }
 
     sacarFondos(fondo: number): void{
-        if (fondo > this.monto)
-            console.warn('Alertaaa!! Monto de extraccion muy elevado');
+        if (fondo > this.monto) {
+            return console.warn('Alertaaa!! No hay fondos suficientes');
+        }
             
-        if (fondo > 100000)
-            console.warn('Alertaaa!! Monto de extraccion muy elevado');
-
+        if (fondo > 100000) {
+            return console.warn('Alertaaa!! Monto de extraccion muy elevado');
+        }
         this.monto -= fondo;
         console.info('El fondo ha sido extraido efectivamente');
-        
     }
 }
 
+const cuentaDeBanco = new CuentaBancaria(124124213, 50000)
+
+cuentaDeBanco.asignarFondos(5000000)
+
+cuentaDeBanco.sacarFondos(10000)
+cuentaDeBanco.sacarFondos(50001)
